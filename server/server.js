@@ -7,7 +7,9 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://codedecoder-git-main-yadavrajneesh481s-projects.vercel.app/' // or '*' for dev
+}));
 app.use(express.json());
 
 connectDB();
