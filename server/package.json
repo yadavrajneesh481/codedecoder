@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "CodeDecoder backend",
   "license": "ISC",
-  "author": "Abhijeet Ilake",
+  "author": "RAJNEESH YADAV",
   "type": "commonjs",
   "main": "server.js",
   "scripts": {
