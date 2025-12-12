@@ -8,7 +8,7 @@ const app = express();
 
 // CORS
 app.use(cors({
-  origin: "https://codedecoder-git-main-yadavrajneesh481s-projects.vercel.app",
+  origin: "https://codedecoder.netlify.app/",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
