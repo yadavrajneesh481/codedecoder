@@ -1,0 +1,44 @@
+/* Navbar.css */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1.5rem;
+  background-color: #1f1f1f;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00bcd4;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.nav-links a:hover {
+  background-color: #333;
+}
+
+.signup-btn {
+  background-color: #00bcd4;
+  color: #1f1f1f;
+  font-weight: 600;
+}
+
+.signup-btn:hover {
+  background-color: #00acc1;
+}
