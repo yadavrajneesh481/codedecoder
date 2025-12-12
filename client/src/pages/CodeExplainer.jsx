@@ -27,7 +27,7 @@ function CodeExplainer() {
 
             // Send token in Authorization header
             const res = await axios.post(
-                "http://localhost:5000/api/explain/code",
+                "https://codedecoder-1.onrender.com/api/explain/code",
                 { code: codeInput },
                 {
                     headers: {
