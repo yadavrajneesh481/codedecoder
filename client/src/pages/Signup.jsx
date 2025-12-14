@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Signup.css";
 import { Link, useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";  
 
 function Signup() {
   const [name, setName] = useState("");
@@ -37,41 +38,44 @@ function Signup() {
   };
 
   return (
-    <div className="auth-container">
-      <h2>Create Account</h2>
+  <>    
+  <Navbar />
+  
+  <div className="auth-container">
+  <h2>Create Account</h2>
 
-      <form className="auth-form" onSubmit={handleSignup}>
-        <input
-          type="text"
-          placeholder="Full Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
+  <form className="auth-form" onSubmit={handleSignup}>
+    <input
+      type="text"
+      placeholder="Full Name"
+      value={name}
+      onChange={(e) => setName(e.target.value)}
+      required
+    />
 
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+    <input
+      type="email"
+      placeholder="Email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      required
+    />
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+    <input
+      type="password"
+      placeholder="Password"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      required
+    />
 
-        <button type="submit" className="auth-btn">Sign Up</button>
-      </form>
+    <button type="submit" className="auth-btn">Sign Up</button>
+  </form>
 
-      <p>
-        Already have an account? <Link to="/login">Login</Link>
-      </p>
-    </div>
+  <p>
+    Already have an account? <Link to="/login">Login</Link>
+  </p>
+</div></>
   );
 }
 

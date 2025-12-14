@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Login.css";
+import Navbar from "../components/Navbar";                
 import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
@@ -35,6 +36,8 @@ function Login() {
   };
 
   return (
+   <>
+   <Navbar/>
     <div className="auth-container">
       <h2>Login</h2>
 
@@ -64,6 +67,7 @@ function Login() {
         Don’t have an account? <Link to="/signup">Sign Up</Link>
       </p>
     </div>
+   </>
   );
 }
 
