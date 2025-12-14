@@ -55,8 +55,10 @@ function CodeExplainer() {
         <div className="wrapper">
             <div className="topbar">
                 <div className="logo">⚡ Code Explainer IDE</div>
-                <button className='btn' ><a href="/">Home</a></button>
-                <button className='btn' onClick={handleLogout}>Logout</button>
+    <div>
+    <button className='btn' ><a href="/" style={{color:"white", textDecoration:"none"}}>Home</a></button>
+    <button className='btn' onClick={handleLogout}>Logout</button>
+    </div>
             </div>
 
             <div className="card-container">
