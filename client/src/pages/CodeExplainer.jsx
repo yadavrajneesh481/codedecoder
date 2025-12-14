@@ -55,8 +55,8 @@ function CodeExplainer() {
         <div className="wrapper">
             <div className="topbar">
                 <div className="logo">⚡ Code Explainer IDE</div>
-    <div>
-    <button className='btn' ><a href="/" style={{color:"white", textDecoration:"none"}}>Home</a></button>
+    <div style={{display:"flex" , gap:"19px"}}>
+    <button className='btn' ><a href="/" style={{color:"white", textDecoration:"none", display:"flex" , width:"100%",height:"100%"}}>Home</a></button>
     <button className='btn' onClick={handleLogout}>Logout</button>
     </div>
             </div>
