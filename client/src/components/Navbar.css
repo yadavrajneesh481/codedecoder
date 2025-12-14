@@ -1,38 +1,51 @@
-/* ==================== Navbar ==================== */
+/* ================= GLOBAL SAFETY ================= */
+/* Ensures navbar never breaks scrolling */
+
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* ================= NAVBAR ================= */
 
 .nav {
-  position: sticky;
+  position: sticky;       /* scroll-safe */
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+
   width: 100%;
-  padding: 1.2rem 2rem;
+  height: 72px;
+  padding: 0 2rem;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  background: rgba(10, 10, 10, 0.75);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgba(12, 12, 12, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 
-  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.25);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
 }
 
-/* ==================== Logo ==================== */
+/* ================= LOGO ================= */
 
 .logo {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.02em;
 
+  cursor: pointer;
+  user-select: none;
+
   text-shadow:
     0 0 12px rgba(0, 212, 255, 0.6),
-    0 0 30px rgba(0, 212, 255, 0.3);
+    0 0 28px rgba(0, 212, 255, 0.3);
 }
 
-/* ==================== Nav Links ==================== */
+/* ================= LINKS ================= */
 
 .nav-links {
   display: flex;
@@ -43,20 +56,22 @@
 .nav-links a {
   position: relative;
   text-decoration: none;
-  color: #a0a0a0;
+  color: #b5b5b5;
+
   font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
 
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* Hover underline glow */
+/* Hover underline */
 .nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -6px;
+
   width: 0;
   height: 2px;
 
@@ -68,47 +83,48 @@
 
 .nav-links a:hover {
   color: #ffffff;
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.7);
 }
 
 .nav-links a:hover::after {
   width: 100%;
 }
 
-/* ==================== Signup Button ==================== */
+/* ================= SIGNUP BUTTON ================= */
 
 .signup-btn {
-  padding: 0.6rem 1.4rem;
+  padding: 0.55rem 1.5rem;
   border-radius: 10px;
 
   background: linear-gradient(135deg, #00d4ff, #b537f2);
-  color: #000000 !important;
+  color: #000 !important;
 
   font-weight: 700;
+  font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 
   box-shadow:
-    0 0 20px rgba(0, 212, 255, 0.4),
-    0 6px 18px rgba(0, 0, 0, 0.3);
+    0 0 20px rgba(0, 212, 255, 0.45),
+    0 6px 18px rgba(0, 0, 0, 0.35);
 
   transition: all 0.35s ease;
 }
 
-/* Button hover */
 .signup-btn:hover {
   transform: translateY(-2px) scale(1.05);
   background: linear-gradient(135deg, #b537f2, #ff2e97);
   box-shadow:
-    0 0 35px rgba(0, 212, 255, 0.6),
-    0 10px 25px rgba(0, 0, 0, 0.45);
+    0 0 35px rgba(0, 212, 255, 0.7),
+    0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* ==================== Responsive ==================== */
+/* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
   .nav {
-    padding: 1rem 1.5rem;
+    padding: 0 1.5rem;
+    height: 64px;
   }
 
   .logo {
@@ -120,11 +136,19 @@
   }
 
   .nav-links a {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .signup-btn {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.85rem;
+    padding: 0.45rem 1.2rem;
+    font-size: 0.8rem;
   }
+}
+
+/* ================= CLICK SAFETY ================= */
+/* Prevent decorative layers from blocking navbar */
+
+.nav::before,
+.nav::after {
+  pointer-events: none;
 }
