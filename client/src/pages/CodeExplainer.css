@@ -636,32 +636,25 @@ body::after {
   outline: 2px solid var(--neon-blue);
   outline-offset: 3px;
 }
+html, body {
+  height: 100%;
+}
 
-/* Ensure page can scroll */
 body {
+  overflow-y: auto;
   overflow-x: hidden;
-  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Allow wrapper to scroll */
 .wrapper {
-  min-height: 100vh;
-  overflow-y: auto;
+  min-height: 100%;
+  overflow: visible;
 }
 
-/* Force interactive layers above animations */
-.input-card,
-.output-card,
-.editor-wrapper,
-.code-input,
-.btn {
-  position: relative;
-  z-index: 5;
+.code-input {
+  overflow: auto;
 }
 
-/* Absolute guarantee */
-.code-input,
 .explanation-output {
-  pointer-events: auto;
-  z-index: 10;
+  overflow-y: auto;
 }
