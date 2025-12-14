@@ -636,3 +636,32 @@ body::after {
   outline: 2px solid var(--neon-blue);
   outline-offset: 3px;
 }
+
+/* Ensure page can scroll */
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Allow wrapper to scroll */
+.wrapper {
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+/* Force interactive layers above animations */
+.input-card,
+.output-card,
+.editor-wrapper,
+.code-input,
+.btn {
+  position: relative;
+  z-index: 5;
+}
+
+/* Absolute guarantee */
+.code-input,
+.explanation-output {
+  pointer-events: auto;
+  z-index: 10;
+}
